@@ -4,14 +4,103 @@
   * Add the media rule and the styles that belong to the MOBILE view only
 */
 
-@media (min-width: 1024px) {
-  /* .top-navigation .trigram {
-    display: none;
-  } */
-
-  /* 👇👇👇 Add the styles that belong to the DESKTOP view only beneath 👇👇👇 */
+/* Global Styles */
+* {
+  box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+/* section {
+  display: flex;
+} */
+
+
+/* 👇👇👇 Add the styles that belong to the DESKTOP view only beneath 👇👇👇 */
+
+/* Desktop Styles */
+.teammates-list {
+  border: 1px solid black;
+}
+
+.content {
+  border: 1px solid orange;
+  width: 100%;
+  max-width: 100%;
+}
+
+.portfolio-list {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+  padding: 10px; /* Padding inside the portfolio list */
+  width: 100%;
+}
+
+/* Adjusts each portfolio item */
+.portfolio-item {
+  border: 1px solid purple;
+  flex: 1 1 calc(33.333% - 20px); /* Three items per row with gap */
+  margin: 10px 0; /* Vertical margin to align rows */
+  /* box-sizing: border-box; */
+}
+
+.top-navigation .trigram {
+    display: none;
+  }
 
 /* 👇👇👇 Add the media rule and the styles that are common within the TABLET and MOBILE views beneath 👇👇👇 */
 
+/* Media Queries for Tablet & Mobile */
+@media (max-width: 1023px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio-item {
+    flex: 1 1 calc(50% - 20px); /* Two items per row on tablets */
+    border-color: blue;
+    flex-direction: row;
+    align-items: left;
+    padding: 10px;
+  }
+  .portfolio-img-wrapper {
+    width: 100%;
+  }
+  /* .portfolio-item-info {
+  } */
+  .top-navigation .trigram {
+    display: flex;
+  }
+  .top-navigation ul {
+    display: none;
+  }
+  
+}
+
+
 /* 👇👇👇 Add the media rule and the styles that belong to the MOBILE view only beneath 👇👇👇 */
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .portfolio-item {
+    flex: 1 1 calc(100% - 20px); /* One item per row on mobile */
+    border-color: green;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .portfolio-item-info {
+    text-align: center;
+  }
+  .portfolio-img-wrapper {
+    width: 100%;
+  }
+}
